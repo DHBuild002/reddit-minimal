@@ -1,12 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import "./styles/navbar.css";
 
 const Navbar = () => {
+  console.log(Link);
   return (
     <ul className="nav relative flex justify-evenly w-full list-none bottom-0 h-12 left-00">
-      <li className="home"></li>
-      <li className="messages"></li>
-      <li className="settings"></li>
+      <Link to="/">
+        <li className="home"></li>
+      </Link>
+      <Link to="/messages">
+        <li className="messages"> </li>
+      </Link>
+      <Link to="/settings">
+        <li className="settings"> </li>
+      </Link>
     </ul>
   );
 };

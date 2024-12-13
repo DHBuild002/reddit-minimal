@@ -6,6 +6,7 @@ li::after {
   list-style-position: inside;
   cursor: pointer;
   padding: 20px;
+  z-index: 1;
 }
 li.home::after {
   font-family: "Material Symbols Outlined";

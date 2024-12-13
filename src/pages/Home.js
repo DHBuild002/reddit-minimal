@@ -1,5 +1,6 @@
 import Header from "../components/Header.js";
 import Navbar from "../components/Navbar.js";
+import ContentArea from "../components/ContentArea.js";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </div>
       <div className="justify-center h-full relative shadow-md bg-gray-50 p-4">
         {/* Navigation Bar */}
+        <ContentArea />
         <Navbar />
       </div>
     </>
