@@ -1,13 +1,17 @@
+import Header from "../components/Header.js";
+import Navbar from "../components/Navbar.js";
+
 export default function Home() {
   return (
     <>
-      <div className="justify-center mx-auto w-1/2">
-        <div className="p-5 shadow-md">
-          <h2 className="text-center font-bold text-2xl">
-            REDDIT <span className="tracking-widest italic">Mini</span>
-          </h2>
-        </div>
-        <div className="h-screen shadow-md bg-white"></div>
+      <div className="justify-center mx-auto w-full">
+        {/* Header for App */}
+        <Header />
+        {/* Content Area */}
+      </div>
+      <div className="justify-center h-full relative shadow-md bg-gray-50 p-4">
+        {/* Navigation Bar */}
+        <Navbar />
       </div>
     </>
   );

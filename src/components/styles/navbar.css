@@ -1,0 +1,20 @@
+li {
+  font-size: 30px;
+  @apply bg-white shadow-md border border-red-400;
+}
+li::marker {
+  list-style-position: inside;
+  cursor: pointer;
+}
+li.home::marker {
+  font-family: "Material Symbols Outlined";
+  content: "\e587";
+}
+li.messages::marker {
+  font-family: "Material Symbols Outlined";
+  content: "\e158";
+}
+li.settings::marker {
+  font-family: "Material Symbols Outlined";
+  content: "\e726";
+}
