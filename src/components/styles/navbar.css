@@ -1,20 +1,21 @@
 li {
   font-size: 30px;
-  @apply bg-white shadow-md border border-red-400;
+  @apply bg-slate-100 hover:bg-white shadow-sm rounded-lg border border-gray-200 items-center;
 }
-li::marker {
+li::after {
   list-style-position: inside;
   cursor: pointer;
+  padding: 20px;
 }
-li.home::marker {
+li.home::after {
   font-family: "Material Symbols Outlined";
   content: "\e587";
 }
-li.messages::marker {
+li.messages::after {
   font-family: "Material Symbols Outlined";
   content: "\e158";
 }
-li.settings::marker {
+li.settings::after {
   font-family: "Material Symbols Outlined";
   content: "\e726";
 }
