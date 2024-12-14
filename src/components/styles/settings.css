@@ -1,0 +1,27 @@
+.ui-mode {
+  @apply flex flex-col rounded-lg bg-slate-100 w-min list-none flex-nowrap justify-center mt-5 mb-5;
+}
+.ui-mode > * {
+  @apply ml-2 p-5;
+}
+.switch-menu {
+  @apply flex flex-row gap-2 mx-auto text-sm;
+}
+.switch-menu > * {
+  @apply text-sm;
+}
+.list-item {
+  @apply p-2;
+}
+.list-item:active,
+.list-item:focus-within {
+  @apply bg-slate-900;
+}
+.list-item:nth-child(1)::after {
+  font-family: "Material Symbols Outlined";
+  content: "\e51c";
+}
+.list-item:nth-child(2)::after {
+  font-family: "Material Symbols Outlined";
+  content: "\e518";
+}
