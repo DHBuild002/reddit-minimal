@@ -8,20 +8,27 @@
   @apply flex flex-row gap-2 mx-auto text-sm;
 }
 .switch-menu > * {
-  @apply text-sm;
+  @apply text-lg p-4;
 }
-.list-item {
-  @apply p-2;
+.list-item::after{
+  font-family: "Material Symbols Outlined";
+  content: "\e518";
 }
 .list-item:active,
 .list-item:focus-within {
-  @apply bg-slate-900;
+  @apply bg-white cursor-pointer;
 }
-.list-item:nth-child(1)::after {
+.list-item{
+  @apply bg-white;
+}
+.list-item_dark{
+  @apply bg-black;
+}
+.list-item_dark::after {
   font-family: "Material Symbols Outlined";
-  content: "\e51c";
+  content: '\e51c';
 }
-.list-item:nth-child(2)::after {
+.list-item_light::after {
   font-family: "Material Symbols Outlined";
   content: "\e518";
 }
