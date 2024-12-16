@@ -21,6 +21,7 @@ export default function Home() {
           {/* Interactor */}
           <FastTravel />
         </div>
+
         <Interactor />
         <Navbar />
       </div>

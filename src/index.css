@@ -23,9 +23,9 @@ code {
 }
 @layer components {
   div {
-    @apply bg-white mb-2 text-blue-500 flex flex-col;
+    @apply mb-2 text-blue-500 flex flex-col;
   }
   .container {
-    @apply hidden text-center rounded-lg p-6 bg-slate-100 opacity-100 absolute w-48 h-min;
+    @apply flex text-center rounded-lg p-6 bg-blue-100 absolute w-48 h-min;
   }
 }

@@ -1,3 +1,3 @@
 .post-img {
-  @apply bg-red-400 z-10 w-full h-max rounded-lg;
+  @apply z-0 w-full h-max rounded-lg object-fill bg-black border border-blue-400;
 }

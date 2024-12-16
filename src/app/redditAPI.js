@@ -40,10 +40,9 @@ const RedditFetcher = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Reddit Post</h1>
+    <>
       {post ? (
-        <div>
+        <>
           <h2>{post.title}</h2>
           <p>{post.selfText}</p>
           {preview ? (
@@ -57,11 +56,11 @@ const RedditFetcher = () => {
             <p>No post Data returned</p>
           )}
           <a href={`https://reddit.com${post.permalink}`}>View Post</a>
-        </div>
+        </>
       ) : (
         <p>Loading...</p>
       )}
-    </div>
+    </>
   );
 };
 

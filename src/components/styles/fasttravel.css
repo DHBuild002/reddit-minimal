@@ -1,0 +1,9 @@
+.fTrav-linkTree {
+    @apply bg-none
+}
+.fTrav-linkTree > h4 {
+    @apply mb-5;
+}
+.fTrav {
+    @apply bg-white p-5 mb-5 shadow-sm rounded-md mt-1;
+}
