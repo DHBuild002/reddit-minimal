@@ -26,7 +26,6 @@ code {
     @apply bg-white mb-2 text-blue-500 flex flex-col;
   }
   .container {
-    @apply text-center rounded-lg p-6 bg-slate-100 opacity-100 absolute w-48 h-min; 
-  } 
+    @apply hidden text-center rounded-lg p-6 bg-slate-100 opacity-100 absolute w-48 h-min;
+  }
 }
-

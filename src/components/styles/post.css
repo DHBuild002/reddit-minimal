@@ -1,0 +1,3 @@
+.post-img {
+  @apply bg-red-400 z-10 w-full h-max rounded-lg;
+}
