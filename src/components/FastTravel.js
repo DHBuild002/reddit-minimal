@@ -4,7 +4,7 @@ import "./styles/fasttravel.css";
 const FastTravel = () => {
   return (
     <>
-      <div className="container mt-6 ml-1">
+      <div className="hidden container mt-6 ml-1">
         <div className="fTrav-linkTree">
           <h4>FastTravel</h4>
           <button className="fTrav">Fav 1</button>

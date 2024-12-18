@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import "./styles/navbar.css";
 
 const Navbar = () => {
-  console.log(Link);
   return (
     <ul className="nav relative flex justify-evenly w-full list-none bottom-0 h-12 left-00">
       <Link to="/">
