@@ -25,13 +25,22 @@ const ReduxRedditFetcher = () => {
   return (
     <div>
       {posts.map((post, index) => (
-        <div key={index} className="flex items-center justify-center">
+        <div
+          key={index}
+          className="border border-blue-400 bg-blue-200flex items-center justify-center m-2 p-2"
+        >
           <h2>{post.title}</h2>
           <p>{post.selfText}</p>
+          <a
+            href={`https://reddit.com${post.permalink}`}
+            className="bg-white shadow-sm p-2 m-2"
+          >
+            View Post
+          </a>
           {post.preview ? (
             <img
-              className="post-img"
-              style={{ maxWidth: "100%" }}
+              className="post-img p-"
+              style={{ maxWidth: "100px" }}
               src={HTMLDecoder(post.preview)}
               alt="reddit img"
             />
@@ -43,7 +52,6 @@ const ReduxRedditFetcher = () => {
               alt="reddit img"
             />
           )}
-          <a href={`https://reddit.com${post.permalink}`}>View Post</a>
         </div>
       ))}
     </div>
