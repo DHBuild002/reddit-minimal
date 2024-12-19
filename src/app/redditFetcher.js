@@ -5,10 +5,17 @@ import "../components/styles/post.css";
 import { HTMLDecoder } from "./utils/htmlDecoder";
 import RedditIcon from "../assets/Reddit_Icon_2Color.jpg";
 
-// decode HTML
+import { selectPosts, selectLoading, selectError } from "../state/postsSlice";
+
 const ReduxRedditFetcher = () => {
   const dispatch = useDispatch();
-  const { posts, loading, error } = useSelector((state) => state.posts);
+
+  // const { posts, loading, error } = useSelector((state) => state.posts);
+
+  // Clearer way of writing above:
+  const posts = useSelector(selectPosts);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchRedditPosts());

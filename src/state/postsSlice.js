@@ -8,6 +8,11 @@ const initialState = {
   error: null,
 };
 
+export const selectPostsState = (state) => state.posts;
+export const selectPosts = (state) => state.posts.posts;
+export const selectLoading = (state) => state.posts.loading;
+export const selectError = (state) => state.posts.error;
+
 export const fetchRedditPosts = createAsyncThunk(
   "reddit/fetchPosts",
   async (_, { rejectWithValue }) => {
