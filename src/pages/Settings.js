@@ -2,11 +2,12 @@ import { React } from "react";
 import { Link } from "react-router-dom";
 import "../components/styles/settings.css";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleTheme } from "../state/themeSlice";
+import { toggleTheme, selectThemeMode } from "../state/themeSlice";
 
 export default function Settings() {
   const dispatch = useDispatch();
   const themeClass = useSelector((state) => state.theme.themeClass);
+  const mode = useSelector(selectThemeMode);
 
   return (
     <>
@@ -16,7 +17,14 @@ export default function Settings() {
           <h3 className="text-base flex-nowrap p-0">Dark/Light Switcher</h3>
           <ul className="switch-menu">
             <li className={themeClass} onClick={() => dispatch(toggleTheme())}>
-              <Link to="/settings"></Link>
+              <span
+                className={`material-icons ${
+                  mode === "light" ? "icon-light" : "icon-dark"
+                }`}
+              ></span>
+              <span className="ml-2">
+                Switch to {mode === "light" ? "Dark" : "Light"} Mode
+              </span>
             </li>
           </ul>
         </div>

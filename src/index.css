@@ -21,6 +21,23 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Dark/Light Theme */
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+}
+
+[data-theme="light"] {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 @layer components {
   div {
     @apply mb-2 text-blue-500 flex flex-col;
