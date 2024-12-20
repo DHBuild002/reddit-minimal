@@ -7,16 +7,16 @@ import Interactor from "../components/Interactor.js";
 export default function Home() {
   return (
     <>
-      <div className="justify-center mx-auto w-full">
+      <div className="justify-center mx-auto">
         {/* Header for App */}
         <Header />
         {/* Content Area */}
       </div>
-      <div className="justify-center h-full relative shadow-md bg-gray-50 p-4">
+      <div className="justify-center h-full w-full relative shadow-md bg-gray-50 p-4">
         {/* FastTravel */}
 
         {/* Navigation Bar */}
-        <div className="justify-start">
+        <div className="justify-center">
           <ContentArea />
           {/* Interactor */}
           <FastTravel />

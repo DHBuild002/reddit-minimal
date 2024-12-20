@@ -10,7 +10,7 @@
 .switch-menu > * {
   @apply text-lg p-4;
 }
-.list-item::after{
+.list-item::after {
   font-family: "Material Symbols Outlined";
   content: "\e518";
 }
@@ -18,15 +18,15 @@
 .list-item:focus-within {
   @apply bg-white cursor-pointer;
 }
-.list-item{
+.list-item {
   @apply bg-white;
 }
-.list-item_dark{
+.list-item_dark {
   @apply bg-black;
 }
 .list-item_dark::after {
   font-family: "Material Symbols Outlined";
-  content: '\e51c';
+  content: "\e51c";
 }
 .list-item_light::after {
   font-family: "Material Symbols Outlined";

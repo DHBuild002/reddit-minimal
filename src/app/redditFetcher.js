@@ -6,11 +6,15 @@ import { HTMLDecoder } from "./utils/htmlDecoder";
 import RedditIcon from "../assets/Reddit_Icon_2Color.jpg";
 
 import { selectPosts, selectLoading, selectError } from "../state/postsSlice";
+import { selectThemeMode } from "../state/themeSlice";
 
 const ReduxRedditFetcher = () => {
   const dispatch = useDispatch();
 
   // const { posts, loading, error } = useSelector((state) => state.posts);
+
+  // Check for current Dark/Light Mode
+  const theme = useSelector(selectThemeMode); // Adjust this selector based on your theme slice
 
   // Clearer way of writing above:
   const posts = useSelector(selectPosts);
@@ -30,17 +34,23 @@ const ReduxRedditFetcher = () => {
   }
 
   return (
-    <div>
+    <div className="justify-center w-full">
       {posts.map((post, index) => (
         <div
           key={index}
-          className="border border-blue-400 bg-blue-200flex items-center justify-center m-2 p-2"
+          className={`border border-blue-400 flex items-center justify-center p-2 ${
+            theme === "dark" ? "bg-black text-white" : "bg-blue-200"
+          }`}
         >
           <h2>{post.title}</h2>
           <p>{post.selfText}</p>
           <a
             href={`https://reddit.com${post.permalink}`}
-            className="bg-white shadow-sm p-2 m-2"
+            className={`${
+              theme === "dark"
+                ? "text-white bg-slate-600 m-3 p-3 "
+                : "text-black"
+            }`}
           >
             View Post
           </a>

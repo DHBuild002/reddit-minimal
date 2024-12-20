@@ -17,7 +17,9 @@ export const fetchRedditPosts = createAsyncThunk(
   "reddit/fetchPosts",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("https://www.reddit.com/r/pics.json");
+      const response = await axios.get(
+        "https://www.reddit.com/r/simpleliving.json"
+      );
 
       // Validate response data
       if (

@@ -5,6 +5,7 @@ const ContentArea = () => {
   return (
     <>
       {/* Post */}
+      
       <Post />
     </>
   );
