@@ -44,7 +44,4 @@ code {
   .container {
     @apply flex text-center rounded-lg p-6 bg-blue-100 absolute w-48 h-min;
   }
-  a {
-    @apply bg-white p-3 m-5 shadow-md rounded-lg
-  }
 }

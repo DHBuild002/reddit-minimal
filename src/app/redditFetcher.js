@@ -34,12 +34,16 @@ const ReduxRedditFetcher = () => {
   }
 
   return (
-    <div className="justify-center w-full">
+    <div
+      className={`justify-center w-full ${
+        theme === "dark" ? "bg-black" : "bg-white"
+      }`}
+    >
       {posts.map((post, index) => (
         <div
           key={index}
           className={`border border-blue-400 flex items-center justify-center p-2 ${
-            theme === "dark" ? "bg-black text-white" : "bg-blue-200"
+            theme === "dark" ? "bg-black text-white" : "bg-white"
           }`}
         >
           <h2>{post.title}</h2>
@@ -48,8 +52,8 @@ const ReduxRedditFetcher = () => {
             href={`https://reddit.com${post.permalink}`}
             className={`${
               theme === "dark"
-                ? "text-white bg-slate-600 m-3 p-3 "
-                : "text-black"
+                ? "text-white bg-black m-4 p-4 shadow-md border border-white rounded-md"
+                : "text-blue bg-white m-4 p-4 shadow-md border border-blue rounded-md"
             }`}
           >
             View Post
