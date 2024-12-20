@@ -1,6 +1,7 @@
 import React from "react";
 import ReduxRedditFetcher from "../app/redditFetcher.js";
 import { useSelector } from "react-redux";
+
 import "./styles/post.css";
 
 import { selectThemeMode } from "../state/themeSlice";

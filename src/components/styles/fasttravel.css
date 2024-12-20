@@ -1,9 +1,12 @@
+.ft-container {
+  @apply border border-none mt-5 left-0 top-0;
+}
 .fTrav-linkTree {
-    @apply bg-none
+  @apply bg-none;
 }
 .fTrav-linkTree > h4 {
-    @apply mb-5;
+  @apply mb-5;
 }
 .fTrav {
-    @apply bg-white p-5 mb-5 shadow-sm rounded-md mt-1;
+  @apply mb-1 shadow-sm rounded-md mt-1 bg-white p-5;
 }

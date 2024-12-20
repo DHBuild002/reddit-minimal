@@ -4,6 +4,8 @@ import { fetchRedditPosts } from "../state/postsSlice";
 import "../components/styles/post.css";
 import { HTMLDecoder } from "./utils/htmlDecoder";
 import RedditIcon from "../assets/Reddit_Icon_2Color.jpg";
+import FastTravel from "../components/FastTravel.js";
+import Interactor from "../components/Interactor.js";
 
 import { selectPosts, selectLoading, selectError } from "../state/postsSlice";
 import { selectThemeMode } from "../state/themeSlice";
@@ -35,14 +37,14 @@ const ReduxRedditFetcher = () => {
 
   return (
     <div
-      className={`justify-center w-full ${
+      className={`w-full flex justify-center ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
       {posts.map((post, index) => (
         <div
           key={index}
-          className={`border border-blue-400 flex items-center justify-center p-2 ${
+          className={`border border-blue-400 p-2 justify-center items-center ${
             theme === "dark" ? "bg-black text-white" : "bg-white"
           }`}
         >
@@ -59,22 +61,32 @@ const ReduxRedditFetcher = () => {
             View Post
           </a>
           {post.preview ? (
-            <img
-              className="post-img p-"
-              style={{ maxWidth: "100px" }}
-              src={HTMLDecoder(post.preview)}
-              alt="reddit img"
-            />
+            <>
+              <img
+                className="post-img"
+                style={{ maxWidth: "33.33%" }}
+                src={HTMLDecoder(post.preview)}
+                alt="reddit img"
+              />
+              <div>
+                <FastTravel />
+                <Interactor />
+              </div>
+            </>
           ) : (
-            <img
-              className="post-img p-5 bg-white w-2xl"
-              style={{ maxWidth: "100%" }}
-              src={RedditIcon}
-              alt="reddit img"
-            />
+            <>
+              <img
+                className="post-img"
+                style={{ maxWidth: "33.33%" }}
+                src={RedditIcon}
+                alt="reddit img"
+              />
+              <Interactor />
+            </>
           )}
         </div>
       ))}
+      <FastTravel />
     </div>
   );
 };
