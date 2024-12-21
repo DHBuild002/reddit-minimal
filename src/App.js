@@ -14,14 +14,16 @@ function App() {
   }, [mode]);
 
   return (
-    <div className="flex justify-center w-full">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/messages" element={<Messages />} />
-          <Route path="/settings" element={<Settings />} />
-        </Routes>
-      </Router>
+    <div className="flex justify-center items-center">
+      <div className="flex h-full">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/messages" element={<Messages />} />
+            <Route path="/settings" element={<Settings />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }

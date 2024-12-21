@@ -11,6 +11,7 @@ body {
   font-family: "Reddit Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 #root {
   width: 960px;
@@ -42,6 +43,6 @@ code {
     @apply mb-2 text-blue-500 dark:text-white flex flex-col;
   }
   .container {
-    @apply flex text-center rounded-lg p-6 bg-blue-100 w-48 h-min;
+    @apply flex text-center rounded-lg p-2 bg-blue-100 w-48 h-min;
   }
 }

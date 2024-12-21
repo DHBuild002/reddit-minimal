@@ -5,7 +5,7 @@ import ContentArea from "../components/ContentArea.js";
 export default function Home() {
   return (
     <>
-      <div className="justify-center mx-auto">
+      <div className="justify-center">
         {/* Header for App */}
         <Header />
       </div>

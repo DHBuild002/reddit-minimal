@@ -5,7 +5,7 @@ import "./styles/navbar.css";
 
 const Navbar = () => {
   return (
-    <ul className="nav relative flex justify-evenly w-full list-none bottom-0 h-12 left-00">
+    <ul className="nav flex">
       <Link to="/">
         <li className="home"></li>
       </Link>
