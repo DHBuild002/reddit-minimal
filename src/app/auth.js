@@ -3,11 +3,11 @@ import * as dotenv from "dotenv";
 dotenv.config();
 
 const REDIRECT_URI = `${window.location.origin}/`; // Important for local dev
-const REACT_APP_CLIENT_ID = process.env.CLIENT_ID; // Replace with your app ID
-const REACT_APP_REDDIT_SECRET = process.env.REDDIT_SECRET;
+const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID; // Replace with your app ID
+const REACT_APP_REDDIT_SECRET = process.env.REACT_APP_REDDIT_SECRET;
 
 export const redditLogin = () => {
-  const authURL = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=code&state=RANDOM_STRING&redirect_uri=${encodeURIComponent(
+  const authURL = `https://www.reddit.com/api/v1/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&state=RANDOM_STRING&redirect_uri=${encodeURIComponent(
     REDIRECT_URI
   )}&duration=permanent&scope=identity read privatemessages`;
   window.location.href = authURL;
