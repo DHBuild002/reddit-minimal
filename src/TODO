@@ -1,6 +1,6 @@
 12th / 13th
 [x] Working Navbar with Icons
-[x] A single static post - take from Reddit itself 
+[x] A single static post - take from Reddit itself
 [x] 2 areas mapped out for the Other Nav areas - Quickswitch / Interactions
 
 14th / 15th Dec
@@ -11,4 +11,11 @@
 
 17th - 19th Dec
 [x] Expand number of posts
-[] Improved styling of Homepage, posts smaller, navigational elements overlaid, links made clearer
+[x] Improved styling of Homepage, posts smaller, navigational elements overlaid, links made clearer
+
+21st December - 23rd December
+[] Implement a working Authentication Workflow
+[] Setup Cors Proxy with Express
+[] Retrieve user data for my account
+[] Confirm the information is displays in-app
+[] Display User messages in my app

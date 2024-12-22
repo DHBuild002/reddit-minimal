@@ -1,0 +1,3 @@
+.auth-btn-container {
+  @apply flex justify-end flex-col items-end;
+}

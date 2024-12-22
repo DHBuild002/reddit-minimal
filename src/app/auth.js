@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import * as dotenv from "dotenv";
-dotenv.config();
+// import * as dotenv from "dotenv";
+// dotenv.config();
 
-const REDIRECT_URI = `${window.location.origin}/`; // Important for local dev
+const REDIRECT_URI = process.env.REDIRECT_URI;
 const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID; // Replace with your app ID
 const REACT_APP_REDDIT_SECRET = process.env.REACT_APP_REDDIT_SECRET;
 
@@ -20,7 +20,7 @@ export const getAccessToken = createAsyncThunk(
       const response = await fetch(
         "https://www.reddit.com/api/v1/access_token",
         {
-          method: postMessage,
+          method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
             Authorization: `Basic ${btoa(

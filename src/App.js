@@ -1,11 +1,11 @@
-import { useEffect, useDispatch } from "react";
+import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Home from "./pages/Home";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
 import { redditLogin, getAccessToken } from "./app/auth";
-import { setUserInfo } from "./state/authSlice";
+import { setUserInfo, logout } from "./state/authSlice";
 import { selectThemeMode } from "./state/themeSlice";
 
 function App() {
