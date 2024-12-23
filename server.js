@@ -33,7 +33,7 @@ app.get("/reddit/callback", async (req, res) => {
 
   const options = {
     method: "POST",
-    uri: "http://wwww.reddit.com/v1/api/access_token",
+    uri: "https://wwww.reddit.com/v1/api/access_token",
     auth: {
       user: CLIENT_ID,
       password: CLIENT_SECRET,
@@ -41,7 +41,7 @@ app.get("/reddit/callback", async (req, res) => {
     formData: {
       grant_type: "authorization_code",
       code,
-      redirect_url: REDIRECT_URI,
+      redirect_uri: REDIRECT_URI,
     },
     headers: {
       "User-Agent": USER_AGENT,
@@ -50,7 +50,8 @@ app.get("/reddit/callback", async (req, res) => {
   };
   try {
     const response = await rp(options);
-    fs.writeFile("reddit_token.txt", response.access_token, (err) => {
+    const parsedResponse = JSON.parse(response);
+    fs.writeFile("reddit_token.txt", parsedResponse.access_token, (err) => {
       if (err) {
         console.error("Could not get token");
       } else {
