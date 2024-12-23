@@ -3,17 +3,18 @@ import { useDispatch } from "react-redux";
 import { setUserInfo } from "../state/authSlice";
 import { getAccessToken } from "../app/auth";
 const AuthButton = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleLogin = async () => {
-    try {
-      const authData = dispatch(getAccessToken());
-      console.log("Auth Data: ", authData);
-      const username = authData.username;
-      dispatch(setUserInfo(username));
-    } catch (error) {
-      console.error("Login Failed: ", error);
-    }
+  const handleLogin = () => {
+    // try {
+    //   const authData = dispatch(getAccessToken());
+    //   console.log("Auth Data: ", authData);
+    //   const username = authData.username;
+    //   dispatch(setUserInfo(username));
+    // } catch (error) {
+    //   console.error("Login Failed: ", error);
+    // }
+    window.location.href = "http://localhost:3001/auth/reddit";
   };
   return (
     <button onClick={handleLogin} className="container btn">

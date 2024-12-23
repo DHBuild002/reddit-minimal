@@ -1,81 +1,66 @@
-// File is here to proxy request to Reddit API
+require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
-const dotenv = require("dotenv");
 const axios = require("axios");
-const queryString = require("querystring");
-
-dotenv.config();
+const rp = require("request-promise");
+const fs = require("fs");
 
 const app = express();
-
-app.use(cors({ origin: "http://localhost:3000" }));
-// app.use(cors());
-
-const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const REACT_APP_CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
+const USER_AGENT = process.env.USER_AGENT;
 
-// Redirect to oAuth provider
-app.get("/login", (req, res) => {
-  const authURL = `https://www.reddit.com/api/v1/authorize?${queryString.stringify(
-    {
-      client_id: REACT_APP_CLIENT_ID,
-      response_type: "code",
-      state: "random_string", // Add a secure random string here to prevent CSRF attacks
-      redirect_uri: REDIRECT_URI,
-      duration: "temporary", // 'temporary' or 'permanent'
-      scope: "identity",
-    }
-  )}`;
-  res.redirect(authURL);
+// Unique state value for the request
+const crypto = require("crypto");
+const stateStore = new Map(); // Simple in-memory store for demo purposes
+
+// Redirect to Reddit for authentication
+app.get("/auth/reddit", (req, res) => {
+  const state = crypto.randomBytes(16).toString("hex");
+  stateStore.set(state, true);
+  const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=code&state=${state}&redirect_uri=${REDIRECT_URI}&duration=permanent&scope=identity read submit`;
+  res.redirect(authUrl);
 });
 
-// Handle Reddit Callback and EXC Code for a Token
-app.get("/callback", async (req, res) => {
-  const { code, state } = req.query;
+// Handle the callback from Reddit
+app.get("/reddit/callback", async (req, res) => {
+  const { code } = req.query;
 
+  // Check for a code
   if (!code) {
-    return res.status(400).send("Authorization code not provided");
+    return res.status(400).send("Missing authorization code");
   }
+
+  const options = {
+    method: "POST",
+    uri: "http://wwww.reddit.com/v1/api/access_token",
+    auth: {
+      user: CLIENT_ID,
+      password: CLIENT_SECRET,
+    },
+    formData: {
+      grant_type: "authorization_code",
+      code,
+      redirect_url: REDIRECT_URI,
+    },
+    headers: {
+      "User-Agent": USER_AGENT,
+    },
+    // Redirect back to the client with a success indication
+  };
   try {
-    const tokenResponse = await axios.post(
-      "https://wwww.reddit.com/api/v1/access_token",
-      queryString.stringify({
-        grant_type: "authorization_code",
-        code,
-        redirect_uri: REDIRECT_URI,
-      }),
-      {
-        auth: {
-          username: REACT_APP_CLIENT_ID,
-          password: REACT_APP_CLIENT_SECRET,
-        },
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
+    const response = await rp(options);
+    fs.writeFile("reddit_token.txt", response.access_token, (err) => {
+      if (err) {
+        console.error("Could not get token");
+      } else {
+        console.log("Token Saved");
       }
-    );
-    const { access_token, token_type } = tokenResponse.data;
-    const userInfo = await axios.get("https://oauth.reddit.com/api/v1/me", {
-      headers: {
-        Authorization: `${token_type} ${access_token}`,
-      },
     });
-    res.json({
-      access_token,
-      user_info: userInfo.data,
-    });
+    res.send("Logged In!");
   } catch (error) {
-    console.error(
-      "Error exchanging code for token:",
-      error.response?.data || error.message
-    );
-    res.status(500).send("Authentication Error");
+    console.error(error);
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server now live on: http://localhost:${PORT}`);
-});
+app.listen(3001, () => console.log("Server running on http://localhost:3001"));
