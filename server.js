@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors"); // Import cors package
 const axios = require("axios");
 const rp = require("request-promise");
 const fs = require("fs");
@@ -10,12 +11,15 @@ const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const USER_AGENT = process.env.USER_AGENT;
 
+// Cors Proxy
+app.use(cors());
+
 // Unique state value for the request
 const crypto = require("crypto");
 const stateStore = new Map(); // Simple in-memory store for demo purposes
 
 // Redirect to Reddit for authentication
-app.get("/auth/reddit", (req, res) => {
+app.get("/reddit/auth", (req, res) => {
   const state = crypto.randomBytes(16).toString("hex");
   stateStore.set(state, true);
   const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=code&state=${state}&redirect_uri=${REDIRECT_URI}&duration=permanent&scope=identity read submit`;
@@ -33,7 +37,7 @@ app.get("/reddit/callback", async (req, res) => {
 
   const options = {
     method: "POST",
-    uri: "https://wwww.reddit.com/v1/api/access_token",
+    uri: "https://wwww.reddit.com/api/v1/access_token",
     auth: {
       user: CLIENT_ID,
       password: CLIENT_SECRET,

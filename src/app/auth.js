@@ -1,13 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-// import * as dotenv from "dotenv";
+// const dotenv = require("dotenv");
 // dotenv.config();
 
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID; // Replace with your app ID
 const REACT_APP_REDDIT_SECRET = process.env.REACT_APP_REDDIT_SECRET;
 
+// // Unique state value for the request
+// const crypto = require("crypto");
+// const stateStore = new Map(); // Simple in-memory store for demo purposes
+
 export const redditLogin = () => {
-  const authURL = `https://www.reddit.com/api/v1/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&state=RANDOM_STRING&redirect_uri=${encodeURIComponent(
+  // const state = crypto.randomBytes(16).toString("hex");
+  // stateStore.set(state, true);
+  const authURL = `https://www.reddit.com/api/v1/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&state=anything&redirect_uri=${encodeURIComponent(
     REDIRECT_URI
   )}&duration=permanent&scope=identity read privatemessages`;
   window.location.href = authURL;

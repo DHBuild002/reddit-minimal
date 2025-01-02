@@ -14,7 +14,7 @@ const AuthButton = () => {
     // } catch (error) {
     //   console.error("Login Failed: ", error);
     // }
-    window.location.href = "http://localhost:3001/auth/reddit";
+    window.location.href = "http://localhost:3001/reddit/auth";
   };
   return (
     <button onClick={handleLogin} className="container btn">

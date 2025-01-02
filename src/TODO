@@ -19,3 +19,8 @@
 [] Retrieve user data for my account
 [] Confirm the information is displays in-app
 [] Display User messages in my app
+
+
+02nd January - 07th Jan
+[] Fix: Inifinite loop after clicking Allow on RedditAPI
+
