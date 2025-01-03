@@ -1,71 +1,71 @@
-require("dotenv").config();
 const express = require("express");
-const cors = require("cors"); // Import cors package
 const axios = require("axios");
-const rp = require("request-promise");
-const fs = require("fs");
+const querystring = require("querystring");
+require("dotenv").config();
 
 const app = express();
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI;
-const USER_AGENT = process.env.USER_AGENT;
+const PORT = 3001;
 
-// Cors Proxy
-app.use(cors());
+const REDDIT_AUTH_URL = "https://www.reddit.com/api/v1/authorize";
+const REDDIT_TOKEN_URL = "https://www.reddit.com/api/v1/access_token";
+const REDIRECT_URI = "http://localhost:3001/callback";
+const CLIENT_ID = process.env.REDDIT_CLIENT_ID;
+const CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET;
 
-// Unique state value for the request
-const crypto = require("crypto");
-const stateStore = new Map(); // Simple in-memory store for demo purposes
-
-// Redirect to Reddit for authentication
-app.get("/reddit/auth", (req, res) => {
-  const state = crypto.randomBytes(16).toString("hex");
-  stateStore.set(state, true);
-  const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=code&state=${state}&redirect_uri=${REDIRECT_URI}&duration=permanent&scope=identity read submit`;
-  res.redirect(authUrl);
+app.get("/auth", (req, res) => {
+  const params = querystring.stringify({
+    client_id: CLIENT_ID,
+    response_type: "code",
+    state: "randomstring",
+    redirect_uri: REDIRECT_URI,
+    duration: "temporary",
+    scope: "identity",
+  });
+  res.redirect(`${REDDIT_AUTH_URL}?${params}`);
 });
 
-// Handle the callback from Reddit
-app.get("/reddit/callback", async (req, res) => {
-  const { code } = req.query;
-
-  // Check for a code
-  if (!code) {
-    return res.status(400).send("Missing authorization code");
+app.get("/callback", async (req, res) => {
+  const { code, state } = req.query;
+  if (!code || !state) {
+    return res.status(400).send("Error: Missing code or state");
   }
 
-  const options = {
-    method: "POST",
-    uri: "https://wwww.reddit.com/api/v1/access_token",
-    auth: {
-      user: CLIENT_ID,
-      password: CLIENT_SECRET,
-    },
-    formData: {
-      grant_type: "authorization_code",
-      code,
-      redirect_uri: REDIRECT_URI,
-    },
-    headers: {
-      "User-Agent": USER_AGENT,
-    },
-    // Redirect back to the client with a success indication
-  };
   try {
-    const response = await rp(options);
-    const parsedResponse = JSON.parse(response);
-    fs.writeFile("reddit_token.txt", parsedResponse.access_token, (err) => {
-      if (err) {
-        console.error("Could not get token");
-      } else {
-        console.log("Token Saved");
+    const tokenResponse = await axios.post(
+      REDDIT_TOKEN_URL,
+      querystring.stringify({
+        grant_type: "authorization_code",
+        code: code,
+        redirect_uri: REDIRECT_URI,
+      }),
+      {
+        headers: {
+          Authorization: `Basic ${Buffer.from(
+            `${CLIENT_ID}:${CLIENT_SECRET}`
+          ).toString("base64")}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
       }
-    });
-    res.send("Logged In!");
-  } catch (error) {
-    console.error(error);
+    );
+
+    const { access_token } = tokenResponse.data;
+    const homepage = "http://localhost:3000?";
+    if (access_token) {
+      // Save token if needed, then redirect
+      return res.redirect(`${homepage}status=success`);
+    } else {
+      return res.redirect(`${homepage}status=error`);
+    }
+  } catch (err) {
+    console.error("Error during callback:", err.message);
+    res.status(500).send("Error: Failed during token exchange");
   }
 });
 
-app.listen(3001, () => console.log("Server running on http://localhost:3001"));
+app.use((req, res) => {
+  res.status(404).send("Endpoint not found");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});

@@ -39,7 +39,11 @@ function App() {
   // useEffect(() => {
   //   document.documentElement.setAttribute("data-theme", mode);
   // }, [mode]);
-
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.href.split("#")[0]);
+    }
+  }, []);
   return (
     <div className="flex justify-center items-center">
       <div className="flex h-full">
