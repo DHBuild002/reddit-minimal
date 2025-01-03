@@ -20,7 +20,17 @@
 [] Confirm the information is displays in-app
 [] Display User messages in my app
 
-
 02nd January - 07th Jan
-[] Fix: Inifinite loop after clicking Allow on RedditAPI
+[x] Fix: Inifinite loop after clicking Allow on RedditAPI
 
+04th January
+[] - review Express Solution and then merge with live project
+
+06th January
+[] - Implement app behaviour as the result of the oAuth feature being used
+
+08th January
+[] - Improve styling of application
+
+12th Jan
+[] - Finalise application and host
