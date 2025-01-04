@@ -2,7 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const REACT_APP_CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-const REACT_APP_REDDIT_SECRET = process.env.REACT_APP_REDDIT_SECRET;
 
 export const redditLogin = () => {
   const authURL = `https://www.reddit.com/api/v1/authorize?client_id=${REACT_APP_CLIENT_ID}&response_type=code&state=anything&redirect_uri=${encodeURIComponent(
