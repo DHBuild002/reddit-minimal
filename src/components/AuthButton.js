@@ -15,7 +15,7 @@ const AuthButton = () => {
 
     if (status === "success" && token) {
       dispatch(getAccessToken({ access_token: token }));
-      window.history.replaceState({}, document.title, "/");
+      // window.history.replaceState({}, document.title, "/");
     }
 
     const fetchUserInfo = async () => {
@@ -63,7 +63,7 @@ const AuthButton = () => {
         </div>
       ) : (
         <button onClick={handleLogin} className="container btn w-full">
-          Authorize your account
+          Login with Reddit
         </button>
       )}
     </>

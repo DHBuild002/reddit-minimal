@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRedditPosts } from "../state/postsSlice";
-import "../components/styles/post.css";
 import { HTMLDecoder } from "./utils/htmlDecoder";
 import RedditIcon from "../assets/Reddit_Icon_2Color.jpg";
 import FastTravel from "../components/FastTravel.js";
 import Interactor from "../components/Interactor.js";
+import "../components/styles/post.css";
 
 import { selectPosts, selectLoading, selectError } from "../state/postsSlice";
 import { selectThemeMode } from "../state/themeSlice";
@@ -17,21 +17,29 @@ const ReduxRedditFetcher = () => {
 
   // Check for current Dark/Light Mode
   const theme = useSelector(selectThemeMode); // Adjust this selector based on your theme slice
-
-  // Clearer way of writing above:
   const posts = useSelector(selectPosts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
 
+  const params = new URLSearchParams(window.location.search);
+  const token = params.get("access_token");
+
   useEffect(() => {
-    dispatch(fetchRedditPosts());
-  }, [dispatch]);
+    if (token) {
+      dispatch(fetchRedditPosts());
+    }
+  }, [dispatch, token]);
+
+  if (!token) {
+    return <h1>Please login to view SimpleLiving posts</h1>;
+  }
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
   if (error) {
+    console.log(error);
     return <p>Error fetching posts: {error}</p>;
   }
 
