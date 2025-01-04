@@ -7,6 +7,7 @@ import AuthButton from "../components/AuthButton.js";
 import "../components/styles/home.css";
 
 export default function Home() {
+  
   return (
     <>
       <div className="justify-center">
