@@ -48,4 +48,7 @@ code {
   .btn {
     @apply bg-white shadow-md flex justify-center border border-blue-400 hover:text-white hover:bg-blue-500;
   }
+  .icon {
+    @apply shadow-sm bg-white p-5 border border-blue-600 rounded-lg cursor-pointer hover:bg-blue-400 hover:text-white;
+  }
 }
