@@ -24,7 +24,7 @@
 [x] Fix: Inifinite loop after clicking Allow on RedditAPI
 
 04th January
-[] - review Express Solution and then merge with live project
+[x] - review Express Solution and then merge with live project
 
 06th January
 [] - Implement app behaviour as the result of the oAuth feature being used
