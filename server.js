@@ -73,7 +73,9 @@ app.get("/callback", async (req, res) => {
     // If statement to confirm that the Access_token was returned, and then return user to the homepage as a result:
     if (access_token) {
       // Save token if needed, then redirect
-      return res.redirect(`${localhost}status=success`);
+      return res.redirect(
+        `${localhost}status=success&access_token=${access_token}`
+      );
     } else {
       return res.redirect(`${localhost}status=error`);
     }

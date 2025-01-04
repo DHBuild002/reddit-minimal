@@ -26,6 +26,7 @@ const authSlice = createSlice({
     builder.addCase(getAccessToken.fulfilled, (state, action) => {
       state.loading = false;
       state.accessToken = action.payload.access_token;
+      console.log("Fulfilled payload:", action.payload.access_token); // Log the payload
     });
     builder.addCase(getAccessToken.rejected, (state, action) => {
       state.loading = false;

@@ -46,6 +46,6 @@ code {
     @apply flex text-center rounded-lg p-2 bg-blue-100 w-48 h-min;
   }
   .btn {
-    @apply bg-white shadow-md flex justify-end border border-blue-400 hover:text-white hover:bg-blue-500;
+    @apply bg-white shadow-md flex justify-center border border-blue-400 hover:text-white hover:bg-blue-500;
   }
 }

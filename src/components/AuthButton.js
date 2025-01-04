@@ -6,9 +6,18 @@ const AuthButton = () => {
   const dispatch = useDispatch();
 
   // Select data from the Redux store
-  const { accessToken, username } = useSelector((state) => state.auth);
+  const { accessToken, username, error } = useSelector((state) => state.auth);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("access_token");
+    const status = params.get("status");
+
+    if (status === "success" && token) {
+      dispatch(getAccessToken({ access_token: token }));
+      window.history.replaceState({}, document.title, "/");
+    }
+
     const fetchUserInfo = async () => {
       if (!accessToken) return;
 
@@ -21,6 +30,7 @@ const AuthButton = () => {
         if (response.ok) {
           const data = await response.json();
           dispatch(setUserInfo(data.name));
+          console.log("User: " + username);
         } else {
           console.error("Failed to fetch");
         }
@@ -29,27 +39,31 @@ const AuthButton = () => {
       }
     };
     fetchUserInfo();
-  }, [accessToken, dispatch]);
+  }, [dispatch, accessToken, username]);
 
   const handleLogin = () => {
-    // window.location.href = "http://localhost:3001/auth";
-    dispatch(getAccessToken());
+    window.location.href = "http://localhost:3001/auth";
+    // dispatch(getAccessToken());
   };
   const handleLogout = () => {
     dispatch(logout());
   };
   return (
     <>
+      {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {username ? (
         <div>
           <h2>Hello, {username}!</h2>
-          <button onClick={handleLogout} className="container btn">
+          <button
+            onClick={handleLogout}
+            className="container btn w-full text-center"
+          >
             Logout
           </button>
         </div>
       ) : (
-        <button onClick={handleLogin} className="container btn">
-          Sign In to your Reddit account
+        <button onClick={handleLogin} className="container btn w-full">
+          Authorize your account
         </button>
       )}
     </>
