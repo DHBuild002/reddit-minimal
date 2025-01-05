@@ -23,12 +23,14 @@ const ReduxRedditFetcher = () => {
 
   const params = new URLSearchParams(window.location.search);
   const token = params.get("access_token");
+  const status = params.get("status");
 
   useEffect(() => {
-    if (token) {
+    console.log(`${token} // ${status}`);
+    if (token && status === "success") {
       dispatch(fetchRedditPosts());
     }
-  }, [dispatch, token]);
+  }, [dispatch, token, status]);
 
   if (!token) {
     return <h1>Please login to view SimpleLiving posts</h1>;

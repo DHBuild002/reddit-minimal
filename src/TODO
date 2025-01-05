@@ -30,7 +30,11 @@
 [x] - Implement app behaviour as the result of the oAuth feature being used
 
 08th January
-[] - Improve styling of application
+[x] - Improve styling of application
+[ ] - Fix the Logout Logic
+[ ] - Replace the Interaction buttons with Icons
+[ ] - Confirm the Dark/Light mode works correctly
+[ ] - Shrink the output down to a mobile view that fits on the page
 
 12th Jan
 [] - Finalise application and host

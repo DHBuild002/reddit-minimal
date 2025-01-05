@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUserInfo, logout } from "../state/authSlice";
 import { getAccessToken } from "../app/auth";
+
 const AuthButton = () => {
   const dispatch = useDispatch();
 
@@ -15,7 +16,6 @@ const AuthButton = () => {
 
     if (status === "success" && token) {
       dispatch(getAccessToken({ access_token: token }));
-      // window.history.replaceState({}, document.title, "/");
     }
 
     const fetchUserInfo = async () => {
@@ -43,7 +43,7 @@ const AuthButton = () => {
 
   const handleLogin = () => {
     window.location.href = "http://localhost:3001/auth";
-    // dispatch(getAccessToken());
+    dispatch(getAccessToken());
   };
   const handleLogout = () => {
     dispatch(logout());
