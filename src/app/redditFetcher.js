@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchRedditPosts } from "../state/postsSlice";
+import { selectUsername } from "../state/authSlice";
 import { HTMLDecoder } from "./utils/htmlDecoder";
 import RedditIcon from "../assets/Reddit_Icon_2Color.jpg";
 import FastTravel from "../components/FastTravel.js";
@@ -20,19 +21,23 @@ const ReduxRedditFetcher = () => {
   const posts = useSelector(selectPosts);
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
+  const username = useSelector(selectUsername);
 
-  const params = new URLSearchParams(window.location.search);
-  const token = params.get("access_token");
-  const status = params.get("status");
+  const { accessToken } = useSelector((state) => state.auth);
+
+  // const authorized = useSelector(selectAuthInformation);
+
+  // const params = new URLSearchParams(window.location.search);
+  // const token = params.get("access_token");
+  // const status = params.get("status");
 
   useEffect(() => {
-    console.log(`${token} // ${status}`);
-    if (token && status === "success") {
+    if (accessToken) {
       dispatch(fetchRedditPosts());
     }
-  }, [dispatch, token, status]);
+  }, [dispatch, accessToken]);
 
-  if (!token) {
+  if (!username) {
     return <h1>Please login to view SimpleLiving posts</h1>;
   }
 

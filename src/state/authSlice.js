@@ -5,7 +5,7 @@ const authSlice = createSlice({
   name: "auth",
   initialState: {
     accessToken: null,
-    username: null,
+    username: "",
     loading: false,
     error: null,
   },
@@ -16,6 +16,9 @@ const authSlice = createSlice({
     logout: (state) => {
       state.accessToken = null;
       state.username = null;
+    },
+    selectUsername: (state) => {
+      return state.username;
     },
   },
   extraReducers: (builder) => {
@@ -34,5 +37,5 @@ const authSlice = createSlice({
     });
   },
 });
-export const { setUserInfo, logout } = authSlice.actions;
+export const { setUserInfo, logout, selectUsername } = authSlice.actions;
 export default authSlice.reducer;

@@ -31,6 +31,9 @@ const AuthButton = () => {
           const data = await response.json();
           dispatch(setUserInfo(data.name));
           console.log("User: " + username);
+
+          // Once user info is returned, we know the token has been stored and used to fetchUserInfo
+          window.history.replaceState({}, document.text, "/");
         } else {
           console.error("Failed to fetch");
         }
@@ -46,7 +49,7 @@ const AuthButton = () => {
     dispatch(getAccessToken());
   };
   const handleLogout = () => {
-    dispatch(logout());
+      dispatch(logout());
   };
   return (
     <>
