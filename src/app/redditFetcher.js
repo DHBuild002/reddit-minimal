@@ -37,7 +37,7 @@ const ReduxRedditFetcher = () => {
     }
   }, [dispatch, accessToken]);
 
-  if (!username) {
+  if (!accessToken) {
     return <h1>Please login to view SimpleLiving posts</h1>;
   }
 
