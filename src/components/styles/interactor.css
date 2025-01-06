@@ -1,0 +1,12 @@
+li.int-gift::after {
+  font-family: "Material Symbols Outlined";
+  content: "\e8b1";
+}
+li.int-share::after {
+  font-family: "Material Symbols Outlined";
+  content: "\e80d";
+}
+li.int-like::after {
+  font-family: "Material Symbols Outlined";
+  content: "\ef91";
+}
