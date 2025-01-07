@@ -1,12 +1,15 @@
-li.int-gift::after {
-  font-family: "Material Symbols Outlined";
-  content: "\e8b1";
+li.int {
+  @apply bg-white border border-blue-400;
 }
-li.int-share::after {
+li.int.gift::after {
+  font-family: "Material Symbols Outlined";
+  content: "\ef91";
+}
+li.int.share::after {
   font-family: "Material Symbols Outlined";
   content: "\e80d";
 }
-li.int-like::after {
+li.int.like::after {
   font-family: "Material Symbols Outlined";
-  content: "\ef91";
+  content: "\e8dc";
 }

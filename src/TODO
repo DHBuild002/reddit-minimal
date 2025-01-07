@@ -32,7 +32,7 @@
 08th January
 [x] - Improve styling of application
 [x] - Fix the Logout Logic
-[] - Replace the Interaction buttons with Icons
+[x] - Replace the Interaction buttons with Icons
 [ ] - Confirm the Dark/Light mode works correctly
 [ ] - Shrink the output down to a mobile view that fits on the page
 

@@ -85,7 +85,7 @@ const ReduxRedditFetcher = () => {
               />
               <div>
                 <FastTravel />
-                {/* <Interactor /> */}
+                <Interactor />
               </div>
             </>
           ) : (
@@ -96,7 +96,7 @@ const ReduxRedditFetcher = () => {
                 src={RedditIcon}
                 alt="reddit img"
               />
-              {/* <Interactor /> */}
+              <Interactor />
             </>
           )}
         </div>

@@ -13,8 +13,8 @@ const Post = () => {
     <div
       className={`post-container ${theme === "dark" ? "bg-black" : "bg-white"}`}
     >
-      <Interactor />
       <ReduxRedditFetcher />
+      {/* <Interactor /> */}
     </div>
   );
 };
