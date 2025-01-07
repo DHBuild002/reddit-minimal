@@ -38,7 +38,11 @@ const ReduxRedditFetcher = () => {
   }, [dispatch, accessToken]);
 
   if (!accessToken) {
-    return <h1>Please login to view SimpleLiving posts</h1>;
+    return (
+      <h1 className="text-center text-2xl m-5">
+        Please login to view SimpleLiving posts
+      </h1>
+    );
   }
 
   if (loading) {

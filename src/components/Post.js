@@ -11,7 +11,9 @@ const Post = () => {
   const theme = useSelector(selectThemeMode); // Adjust this selector based on your theme slice
   return (
     <div
-      className={`post-container ${theme === "dark" ? "bg-black" : "bg-white"}`}
+      className={`post-container ${
+        theme === "dark" ? "bg-black" : "bg-white"
+      }`}
     >
       <ReduxRedditFetcher />
       {/* <Interactor /> */}

@@ -1,6 +1,9 @@
 .post-img {
   @apply z-0 w-1/2 h-min rounded-lg p-5 object-fill bg-transparent border border-blue-400;
 }
+.post-container {
+  @apply items-center;
+}
 [data-theme="dark"].post-container {
   @apply flex justify-center items-center;
 }

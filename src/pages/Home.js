@@ -1,5 +1,4 @@
 import Header from "../components/Header.js";
-import Navbar from "../components/Navbar.js";
 import ContentArea from "../components/ContentArea.js";
 import AuthButton from "../components/AuthButton.js";
 
@@ -7,7 +6,6 @@ import AuthButton from "../components/AuthButton.js";
 import "../components/styles/home.css";
 
 export default function Home() {
-  
   return (
     <>
       <div className="justify-center">
@@ -22,8 +20,6 @@ export default function Home() {
         {/* Content Area */}
         <ContentArea />
       </div>
-      {/* FastTravel */}
-      <Navbar />
     </>
   );
 }

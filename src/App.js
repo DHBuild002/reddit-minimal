@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import Home from "./pages/Home";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
+import Navbar from "./components/Navbar";
+import "./App.css";
 import { redditLogin, getAccessToken } from "./app/auth";
 import { setUserInfo, logout } from "./state/authSlice";
 import { selectThemeMode } from "./state/themeSlice";
@@ -45,14 +47,17 @@ function App() {
     }
   }, []);
   return (
-    <div className="flex justify-center items-center">
-      <div className="flex h-full">
+    <div className="flex h-screen justify-center items-center">
+      <div className="flex flex-col h-4/5 hover:overflow w-1/2 mr-0 pb-0 rounded-lg shadow-lg border border-slate-400 relative">
         <Router>
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/messages" element={<Messages />} />
-            <Route path="/settings" element={<Settings />} />
-          </Routes>
+          <div className="flex-grow">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route path="/messages" element={<Messages />} />
+              <Route path="/settings" element={<Settings />} />
+            </Routes>
+          </div>
+          <Navbar />
         </Router>
       </div>
     </div>

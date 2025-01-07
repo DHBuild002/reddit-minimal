@@ -18,3 +18,8 @@
 .App-link {
   color: #61dafb;
 }
+div {
+  margin: 0;
+  padding: 0;
+  scrollbar-gutter: stable;
+}
