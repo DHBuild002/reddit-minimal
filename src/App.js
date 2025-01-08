@@ -47,7 +47,7 @@ function App() {
     }
   }, []);
   return (
-    <div className="flex h-screen overflow-y-auto md:w-10/12 sm:w-full sm:items-start sm:justify-center justify-center items-center">
+    <div className="flex h-screen overflow-y-auto md:w-10/12 sm:w-full sm:items-center sm:justify-center items-center">
       <div className="flex flex-col h-4/5 hover:overflow mr-0 pb-0 rounded-lg shadow-lg border border-slate-400 relative">
         <Router>
           <div className="flex-grow">
