@@ -33,8 +33,8 @@
 [x] - Improve styling of application
 [x] - Fix the Logout Logic
 [x] - Replace the Interaction buttons with Icons
-[ ] - Shrink the output down to a mobile view that fits on the page
-[ ] - Confirm the Dark/Light mode works correctly
+[x] - Create a Mobile view container
+[] - Confirm the Dark/Light mode works correctly
 
 12th Jan
 [] - Finalise application and host
