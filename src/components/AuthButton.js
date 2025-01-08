@@ -49,13 +49,13 @@ const AuthButton = () => {
     dispatch(getAccessToken());
   };
   const handleLogout = () => {
-      dispatch(logout());
+    dispatch(logout());
   };
   return (
     <>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {username ? (
-        <div>
+        <div className="flex justify-center">
           <h2>Hello, {username}!</h2>
           <button
             onClick={handleLogout}
@@ -65,7 +65,7 @@ const AuthButton = () => {
           </button>
         </div>
       ) : (
-        <button onClick={handleLogin} className="container btn w-full">
+        <button onClick={handleLogin} className="btn flex w-1/2 p-5 rounded-lg">
           Login with Reddit
         </button>
       )}

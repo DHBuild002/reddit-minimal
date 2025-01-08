@@ -1,12 +1,11 @@
 .nav {
-  @apply justify-evenly w-full h-auto p-4 mr-0 z-0 list-none sticky bottom-0 bg-white left-0 border border-blue-400;
+  @apply justify-evenly w-full h-auto p-4 mr-0 z-0 list-none sticky bottom-0 rounded-b-lg bg-white left-0 border border-blue-400;
 }
 li {
   font-size: 30px;
   @apply bg-blue-100 hover:bg-blue-700 hover:text-white shadow-sm rounded-lg;
-
 }
-li.int:hover::after{
+li.int:hover::after {
   @apply bg-white;
 }
 li::after {

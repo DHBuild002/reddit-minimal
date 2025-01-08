@@ -12,7 +12,7 @@ export default function Home() {
         {/* Header for App */}
         <Header />
       </div>
-      <div className="auth-btn-container">
+      <div className="flex justify-center items-center">
         <AuthButton />
       </div>
       {/* Navigation Bar */}
