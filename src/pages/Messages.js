@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export default function Messages() {
   return (
     <>
-      <div className="p-4">
+      <div className="p-3">
         <p>Unread Messages | Friends</p>
 
-        <div className="p-10 bg-white shadow-md">
-          <ul>
-            <li></li>
+        <div className="p-0 bg-white">
+          <ul className="p-3">
+            <li>User message go here...</li>
           </ul>
         </div>
 

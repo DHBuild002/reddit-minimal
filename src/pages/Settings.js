@@ -13,8 +13,8 @@ export default function Settings() {
     <>
       <div className="p-4">
         <p>Account Settings</p>
-        <div className="ui-mode w-max p-5">
-          <h3 className="text-base flex-nowrap p-0">Dark/Light Switcher</h3>
+        <div className="p-5">
+          <h3 className="text-base p-0">Dark/Light Switcher</h3>
           <ul className="switch-menu">
             <li className={themeClass} onClick={() => dispatch(toggleTheme())}>
               <span
