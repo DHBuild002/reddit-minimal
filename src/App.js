@@ -21,10 +21,10 @@ function App() {
     }
   }, []);
   return (
-    <div className="flex h-screen overflow-y-auto md:w-full sm:w-full sm:items-center sm:justify-center items-center">
-      <div className="flex flex-col h-4/5 justify-center items-center hover:overflow mr-0 pb-0 rounded-lg shadow-lg border border-slate-400 relative">
+    <div className="flex h-screen overflow-y-auto relative md:w-full sm:w-full sm:items-center sm:justify-center items-center">
+      <div className="flex flex-col justify-center items-center hover:overflow mr-0 pb-0 rounded-lg shadow-lg border border-slate-400 relative">
         <Router>
-          <div className="max-w-screen-sm w-full flex-grow">
+          <div className="max-w-screen-sm w-full">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/messages" element={<Messages />} />

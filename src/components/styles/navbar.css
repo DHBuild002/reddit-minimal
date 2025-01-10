@@ -1,5 +1,5 @@
 .nav {
-  @apply justify-evenly w-full h-auto p-4 mr-0 z-0 list-none sticky bottom-0 rounded-b-lg bg-white left-0 border border-blue-400;
+  @apply justify-evenly w-full h-min p-4 mr-0 z-0 list-none sticky bottom-0 rounded-b-lg bg-white left-0 border border-blue-400;
 }
 li {
   font-size: 30px;

@@ -23,6 +23,7 @@ export const getAccessToken = createAsyncThunk(
     if (!access_token) {
       throw new Error("Access Token is missing");
     }
+    localStorage.setItem("access_token", access_token);
     return { access_token };
   }
 );

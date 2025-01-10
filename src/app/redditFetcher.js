@@ -56,7 +56,7 @@ const ReduxRedditFetcher = () => {
 
   return (
     <div
-      className={`w-full flex justify-center ${
+      className={`w-full overflow-y-hidden h-full relative flex justify-center ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
@@ -73,7 +73,7 @@ const ReduxRedditFetcher = () => {
             href={`https://reddit.com${post.permalink}`}
             className={`${
               theme === "dark"
-                ? "text-white bg-black m-4 p-4 shadow-md border border-white rounded-md"
+                ? "text-white bg-black m-0 p-0 shadow-md border border-white rounded-md"
                 : "text-blue bg-white m-4 p-4 shadow-md border border-blue rounded-md"
             }`}
           >
