@@ -56,14 +56,14 @@ const ReduxRedditFetcher = () => {
 
   return (
     <div
-      className={`w-full flex justify-center ${
+      className={`w-full h-fit mb-5 pb-10 flex justify-center ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
       {posts.map((post, index) => (
         <div
           key={index}
-          className={`border border-blue-400 p-2 justify-center items-center ${
+          className={`border border-blue-400 p-5 m-2 justify-center items-center ${
             theme === "dark" ? "bg-black text-white" : "bg-white"
           }`}
         >
