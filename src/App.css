@@ -6,14 +6,12 @@ div {
 .iphone-frame {
   width: 350px;
   height: 560px;
-  overflow: visible;
   align-items: center;
   flex-direction: column;
   border: 12px solid black;
   border-radius: 10px;
   margin: 30px;
   position: relative;
-  
 }
 .iphone-screen {
   width: 100%;

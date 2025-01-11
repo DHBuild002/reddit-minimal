@@ -1,5 +1,5 @@
 .post-container {
-  @apply h-full overflow-hidden 
+  @apply h-full relative z-0; 
 }
 .post-img {
   @apply z-0 w-1/2 h-min rounded-lg p-5 object-fill bg-transparent border border-blue-400;

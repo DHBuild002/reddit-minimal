@@ -38,7 +38,8 @@
 
 11th Jan - 1 hour of work
 [x] Fix the header element to be fixed at the top of the app
-[] Ensure that the content in the mobile view sticks to a fixed width no matter the size of the browser window width ways
+[x] Ensure that the content in the mobile view sticks to a fixed width no matter the size of the browser window width ways
+[] FIX: Content area is not scrollable, and does not align correctly
 [] Host the application
 
 12th Jan

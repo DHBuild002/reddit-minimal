@@ -56,7 +56,7 @@ const ReduxRedditFetcher = () => {
 
   return (
     <div
-      className={`w-full overflow-y-hidden h-full relative flex justify-center ${
+      className={`w-full flex justify-center ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >

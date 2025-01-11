@@ -12,11 +12,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  overflow: hidden;
 }
 #root {
   display: flex;
-  overflow: hidden;
+  overflow: auto;
   justify-content: center;
   align-items: center;
 }

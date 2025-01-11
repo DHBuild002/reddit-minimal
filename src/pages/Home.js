@@ -11,7 +11,7 @@ export default function Home() {
         <AuthButton />
       </div>
       {/* Navigation Bar */}
-      <div className="z-0 justify-center h-content overflow-y-hidden">
+      <div className="justify-center">
         {/* Content Area */}
         <ContentArea />
       </div>
