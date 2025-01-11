@@ -1,6 +1,9 @@
 li.int {
   @apply bg-white border border-blue-400;
 }
+#item-hover:hover {
+  background-color: #FF4500;
+}
 li.int.gift::after {
   font-family: "Material Symbols Outlined";
   content: "\ef91";

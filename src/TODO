@@ -41,7 +41,7 @@
 [x] Ensure that the content in the mobile view sticks to a fixed width no matter the size of the browser window width ways
 [x] FIX: Content area is not scrollable, and does not align correctly
 [x] FIX: Size of the movile view should take up as much of the surrounding viewport as comfortably possible
-[] FIX: Adjust page element so they positioned correctly in mobile view, and change heights were require
+[x] FIX: Adjust page element so they positioned correctly in mobile view, and change heights were require
 [] FIX: Hover over interaction buttons leads to a whiteout
 [] Host the application
 

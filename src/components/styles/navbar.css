@@ -5,9 +5,9 @@ li {
   font-size: 30px;
   @apply bg-blue-100 hover:bg-blue-700 hover:text-white shadow-sm rounded-lg;
 }
-li.int:hover::after {
+/* li.int:hover::after {
   @apply bg-white;
-}
+} */
 li::after {
   list-style-position: inside;
   cursor: pointer;
