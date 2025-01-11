@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import Header from "./components/Header.js";
 import Home from "./pages/Home";
 import Messages from "./pages/Messages";
 import Settings from "./pages/Settings";
@@ -25,6 +26,10 @@ function App() {
       <div className="iphone-screen">
         <Router>
           <div>
+            <div className="sticky justify-center">
+              {/* Header for App */}
+              <Header />
+            </div>
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/messages" element={<Messages />} />

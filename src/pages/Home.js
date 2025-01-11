@@ -1,4 +1,3 @@
-import Header from "../components/Header.js";
 import ContentArea from "../components/ContentArea.js";
 import AuthButton from "../components/AuthButton.js";
 
@@ -8,10 +7,6 @@ import "../components/styles/home.css";
 export default function Home() {
   return (
     <>
-      <div className="relative justify-center">
-        {/* Header for App */}
-        <Header />
-      </div>
       <div className="flex justify-center items-center">
         <AuthButton />
       </div>

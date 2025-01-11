@@ -22,4 +22,5 @@ div {
   flex-direction: column;
   position: relative;
   margin: 0;
+  overflow: hidden;
 }
