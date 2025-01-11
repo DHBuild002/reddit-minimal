@@ -1,5 +1,6 @@
 import ContentArea from "../components/ContentArea.js";
 import AuthButton from "../components/AuthButton.js";
+import React, { useEffect } from "react";
 
 // CSS Styles
 import "../components/styles/home.css";
