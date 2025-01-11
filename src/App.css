@@ -1,7 +1,7 @@
 div {
   margin: 0;
   padding: 0;
-  scrollbar-gutter: stable;
+  scrollbar-gutter: auto;
 }
 .iphone-frame {
   width: 350px;
@@ -12,6 +12,7 @@ div {
   border-radius: 10px;
   margin: 30px;
   position: relative;
+  overflow: hidden;
 }
 .iphone-screen {
   width: 100%;

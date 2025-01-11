@@ -15,7 +15,7 @@ body {
 }
 #root {
   display: flex;
-  overflow: auto;
+  overflow: unset;
   justify-content: center;
   align-items: center;
 }

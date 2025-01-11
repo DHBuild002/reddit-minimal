@@ -1,5 +1,5 @@
 .nav {
-  @apply justify-between absolute w-full p-5 m-0 z-10 list-none bottom-0 bg-white left-0 border border-blue-400;
+  @apply justify-between absolute w-full p-5 m-0 z-50 list-none bottom-0 bg-white left-0 border border-blue-400;
 }
 li {
   font-size: 30px;

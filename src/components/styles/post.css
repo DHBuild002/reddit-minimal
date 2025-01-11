@@ -1,8 +1,10 @@
 .post-container {
-  @apply h-full relative z-0; 
+  @apply max-h-full relative z-30 h-60;
+  overflow-y: auto;
+  /* scrollbar-gutter: stable;  */
 }
 .post-img {
-  @apply z-0 w-1/2 h-min rounded-lg p-5 object-fill bg-transparent border border-blue-400;
+  @apply z-0 w-full h-full rounded-lg p-5 object-fill bg-transparent border border-blue-400;
 }
 [data-theme="dark"].post-container {
   @apply flex justify-center items-center;

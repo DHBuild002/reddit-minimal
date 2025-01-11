@@ -11,7 +11,7 @@ export default function Home() {
         <AuthButton />
       </div>
       {/* Navigation Bar */}
-      <div className="justify-center">
+      <div className="content-area-wrapper max-h-full justify-center flex-1">
         {/* Content Area */}
         <ContentArea />
       </div>
