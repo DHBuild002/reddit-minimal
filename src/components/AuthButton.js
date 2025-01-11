@@ -55,20 +55,14 @@ const AuthButton = () => {
     <>
       {error && <p style={{ color: "red" }}>Error: {error}</p>}
       {username ? (
-        <div className="flex justify-center">
-          <h2>Hello, {username}!</h2>
-          <button
-            onClick={handleLogout}
-            className="container btn text-center"
-          >
+        <div className="flex flex-row">
+          <h2 className="mr-5 text-sm">Hello, {username}!</h2>
+          <button onClick={handleLogout} className="container btn">
             Logout
           </button>
         </div>
       ) : (
-        <button
-          onClick={handleLogin}
-          className="btn flex p-5 rounded-lg"
-        >
+        <button onClick={handleLogin} className="btn flex p-5 rounded-lg">
           Login with Reddit
         </button>
       )}

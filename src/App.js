@@ -29,14 +29,14 @@ function App() {
             {/* Header for App */}
             <Header />
           </div>
-          <div className="m-0 w-full">
+          <div className="m-0 w-full h-full">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/messages" element={<Messages />} />
               <Route path="/settings" element={<Settings />} />
             </Routes>
+            <Navbar />
           </div>
-          <Navbar />
         </Router>
       </div>
     </div>
