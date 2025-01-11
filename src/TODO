@@ -37,8 +37,8 @@
 [x] - Confirm the Dark/Light mode works correctly
 
 11th Jan - 1 hour of work
-[] Fix the header element to be fixed at the top of the app
-[] Ensure that the mobile are sticks to a fixed width no matter the size of the browser window width ways
+[x] Fix the header element to be fixed at the top of the app
+[] Ensure that the content in the mobile view sticks to a fixed width no matter the size of the browser window width ways
 [] Host the application
 
 12th Jan

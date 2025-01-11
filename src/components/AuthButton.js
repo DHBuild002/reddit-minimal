@@ -59,7 +59,7 @@ const AuthButton = () => {
           <h2>Hello, {username}!</h2>
           <button
             onClick={handleLogout}
-            className="container btn w-full text-center"
+            className="container btn text-center"
           >
             Logout
           </button>
@@ -67,7 +67,7 @@ const AuthButton = () => {
       ) : (
         <button
           onClick={handleLogin}
-          className="btn flex w-full p-5 rounded-lg"
+          className="btn flex p-5 rounded-lg"
         >
           Login with Reddit
         </button>
