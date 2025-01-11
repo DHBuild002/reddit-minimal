@@ -15,10 +15,10 @@ body {
   overflow: hidden;
 }
 #root {
-  width: 960px;
   display: flex;
-  margin: auto;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

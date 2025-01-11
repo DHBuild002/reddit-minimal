@@ -65,7 +65,10 @@ const AuthButton = () => {
           </button>
         </div>
       ) : (
-        <button onClick={handleLogin} className="btn flex w-1/2 p-5 rounded-lg">
+        <button
+          onClick={handleLogin}
+          className="btn flex w-full p-5 rounded-lg"
+        >
           Login with Reddit
         </button>
       )}
