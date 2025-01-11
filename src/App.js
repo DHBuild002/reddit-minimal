@@ -25,11 +25,11 @@ function App() {
     <div className="iphone-frame">
       <div className="iphone-screen">
         <Router>
-          <div>
-            <div className="sticky justify-center">
-              {/* Header for App */}
-              <Header />
-            </div>
+          <div className="sticky justify-center items-center">
+            {/* Header for App */}
+            <Header />
+          </div>
+          <div className="m-0">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/messages" element={<Messages />} />
