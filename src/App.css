@@ -4,25 +4,25 @@ div {
   scrollbar-gutter: stable;
 }
 .iphone-frame {
-  width: 375px;
+  width: 350px;
   height: 560px;
-  overflow: auto;
+  overflow: visible;
   align-items: center;
   flex-direction: column;
-  border: 1px solid grey;
+  border: 12px solid black;
   border-radius: 10px;
   margin: 30px;
   position: relative;
+  
 }
 .iphone-screen {
   width: 100%;
+  /* border: 1px solid red; */
   height: 100%;
   background: #fff; /* Simulate the screen color */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
+  position: absolute;
   margin: 0;
-  overflow: hidden;
   justify-content: space-between;
 }

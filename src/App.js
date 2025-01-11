@@ -29,7 +29,7 @@ function App() {
             {/* Header for App */}
             <Header />
           </div>
-          <div className="m-0">
+          <div className="m-0 w-full">
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route path="/messages" element={<Messages />} />
