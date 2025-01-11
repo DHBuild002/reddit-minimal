@@ -8,7 +8,7 @@ import "../components/styles/home.css";
 export default function Home() {
   return (
     <>
-      <div className="justify-center">
+      <div className="relative justify-center">
         {/* Header for App */}
         <Header />
       </div>
@@ -16,7 +16,7 @@ export default function Home() {
         <AuthButton />
       </div>
       {/* Navigation Bar */}
-      <div className="justify-center h-content overflow-y-hidden">
+      <div className="z-0 justify-center h-content overflow-y-hidden">
         {/* Content Area */}
         <ContentArea />
       </div>

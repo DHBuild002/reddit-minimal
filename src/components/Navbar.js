@@ -5,7 +5,7 @@ import "./styles/navbar.css";
 
 const Navbar = () => {
   return (
-    <ul className="nav flex">
+    <ul className="nav flex sticky">
       <Link to="/">
         <li className="home"></li>
       </Link>
