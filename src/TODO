@@ -42,7 +42,7 @@
 [x] FIX: Content area is not scrollable, and does not align correctly
 [x] FIX: Size of the movile view should take up as much of the surrounding viewport as comfortably possible
 [x] FIX: Adjust page element so they positioned correctly in mobile view, and change heights were require
-[] FIX: Hover over interaction buttons leads to a whiteout
+[x] FIX: Hover over interaction buttons leads to a whiteout
 [] Host the application
 
 12th Jan
